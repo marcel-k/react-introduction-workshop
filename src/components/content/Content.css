@@ -5,20 +5,6 @@
   padding: 12px;
 }
 
-.button {
-  height: 40px;
-  padding: 4px 16px;
-  border: none;
-  background-color: #ff4700;
-  color: white;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 16px;
-}
-
-.button:active {
-  background-color: #E62E00;
-}
-
 .content .button-register {
   margin-left: auto;
   margin-top: auto;
