@@ -6,7 +6,7 @@
   grid-gap: 8px;
   grid-template-areas: 
     "header header header"
-    "menu main main"
+    "menu content content"
     "footer footer footer";
 }
 
@@ -14,19 +14,13 @@
   grid-area: header;
 }
 
-.main {
-  border: 1px solid #ccc;
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
-  padding: 12px;
+.content {
+  grid-area: content;
 }
-
 .footer {
   grid-area: footer;
 }
 
 .menu {
-  border: 1px solid #ccc;
   grid-area: menu;
 }
