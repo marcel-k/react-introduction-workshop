@@ -10,6 +10,10 @@
     "footer footer footer";
 }
 
+.header {
+  grid-area: header;
+}
+
 .main {
   border: 1px solid #ccc;
   grid-area: main;
@@ -18,23 +22,7 @@
   padding: 12px;
 }
 
-.header {
-  border: 1px solid #ccc;
-  background-color: #ff4700;
-  min-height: 100px;
-  padding: 0 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  grid-area: header;
-}
-
 .footer {
-  display: flex;
-  align-items: center;
-  padding: 0 12px;
-  min-height: 50px;
-  border: 1px solid #ccc;
   grid-area: footer;
 }
 
