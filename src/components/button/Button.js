@@ -1,9 +1,12 @@
 import React from 'react';
 import './Button.css';
 
-function Button() {
+function Button(props) {
+  const { text = '' } = props;
   return (
-    <button className={'button button-register'}>Register</button>
+    <button className={'button button-register'}>
+      {text}
+    </button>
   );
 }
 
