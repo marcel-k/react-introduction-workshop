@@ -2,6 +2,9 @@
   border: 1px solid #ccc;
 }
 
+.search {
+  border-bottom: 1px solid #ccc;
+}
 
 .menu .list-item {
   position:relative;

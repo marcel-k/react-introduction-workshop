@@ -1,5 +1,6 @@
 import React from 'react';
 import List from '../list/List';
+import Search from '../search/Search';
 import ListItem from '../list/ListItem';
 import { classNames } from '../../utils/utils';
 import './Menu.css';
@@ -60,6 +61,7 @@ function Menu() {
 
   return (
     <div className={'menu'}>
+      <Search />
       <List>
         {menuItems.map((item) => (
           <ListItem
