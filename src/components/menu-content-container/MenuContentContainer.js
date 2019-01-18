@@ -60,11 +60,16 @@ const paragraphs = [
 ];
 
 function MenuContentContainer() {
+  const selectedItem = menuItems.find((item) => item.selected);
 
   return (
     <>
-    <Menu menuItems={menuItems} />
-    <Content title={title} paragraphs={paragraphs} />
+      <Menu menuItems={menuItems} />
+      <Content
+        title={title}
+        paragraphs={paragraphs}
+        registered={selectedItem.registered}
+      />
     </>
   );
 }

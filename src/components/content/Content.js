@@ -3,7 +3,13 @@ import Button from '../button/Button';
 import './Content.css';
 
 function Content(props) {
-  const { title, paragraphs = [] } = props;
+  const { 
+    title, 
+    registered,
+    paragraphs = []
+   } = props;
+
+  const buttonText = registered ? 'Unregister' : 'Register';
 
   return (
     <main className={'content'}>
@@ -11,7 +17,7 @@ function Content(props) {
       {
         paragraphs.map((p, index) => <p key={`${title}-${index}`} className={'description'}>{p}</p>)
       }
-      <Button text={'Unregister'} />
+      <Button text={buttonText} />
     </main>
   );
 }
