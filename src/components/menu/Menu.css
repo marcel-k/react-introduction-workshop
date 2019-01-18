@@ -10,10 +10,8 @@
   background-color: #ff4700;
 }
 
-.menu .list-item.current .text,
-.menu .list-item.current .subtext,
-.menu .list-item.current:after {
-  color: white;
+.menu .list-item.selected {
+  background-color: #bbb;
 }
 
 .menu .list-item.registered:after {
@@ -23,4 +21,10 @@
   content: '@';
   font-weight: bold;
   font-size: 18px;
+}
+
+.menu .list-item.current span,
+.menu .list-item.selected span,
+.menu .list-item.current:after {
+  color: white;
 }

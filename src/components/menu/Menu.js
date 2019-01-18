@@ -6,13 +6,13 @@ import './Menu.css';
 
 /**
  * This is data coming from the back-end.
- * Should keep it clean, so items should not contain selected prop.
  */
 const menuItems = [
   {
     id: 1,
     text: 'React Deep Dive I',
-    subText: '22 feb 2019'
+    subText: '22 feb 2019',
+    selected: true // is not something that the back-end should know..
   },
   {
     id: 2,
@@ -67,7 +67,11 @@ function Menu() {
             text={item.text}
             subText={item.subText}
             // cssClasses={`${item.current ? 'current' : ''} ${item.registered ? 'registered' : ''}`}
-            cssClasses={classNames({ 'current': item.current, 'registered': item.registered })}
+            cssClasses={classNames({
+              'current': item.current,
+              'registered': item.registered,
+              'selected': item.selected
+            })}
           />)
         )}
       </List>
