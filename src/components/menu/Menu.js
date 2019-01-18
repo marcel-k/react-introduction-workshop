@@ -48,12 +48,30 @@ class Menu extends React.Component {
     this.state = { searchText: '' };
   }
 
+  filterMenuItems() {
+    const filteredItems =
+      menuItems.filter((item) => {
+        const itemText = item.text.toLowerCase();
+        const searchText = this.state.searchText.toLowerCase();
+
+        if (itemText.indexOf(searchText) !== -1) {
+          return true;
+        }
+
+        return false;
+      });
+
+    return filteredItems;
+  }
+
   render() {
+    const filteredItems = this.filterMenuItems();
+
     return (
       <div className={'menu'}>
         <Search searchText={this.state.searchText} />
         <List>
-          {menuItems.map((item) => (
+          {filteredItems.map((item) => (
             <ListItem
               key={item.id}
               text={item.text}
