@@ -1,5 +1,6 @@
 import React from 'react';
 import List from '../list/List';
+import Search from '../search/Search';
 import './Menu.css';
 
 const menuItems = [
@@ -33,6 +34,7 @@ const menuItems = [
 function Menu() {
   return (
     <div className={'menu'}>
+      <Search />
       <List items={menuItems} />
     </div>
   );
