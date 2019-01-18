@@ -25,6 +25,7 @@
 
 .list-item .wrapper:hover {
   cursor: pointer;
+  background-color: #efefef;
 }
 
 .list-item .text {
