@@ -1,3 +1,26 @@
 .menu {
   border: 1px solid #ccc;
 }
+
+
+.menu .list-item {
+  position:relative;
+}
+.menu .list-item.current {
+  background-color: #ff4700;
+}
+
+.menu .list-item.current .text,
+.menu .list-item.current .subtext,
+.menu .list-item.current:after {
+  color: white;
+}
+
+.menu .list-item.registered:after {
+  position: absolute;
+  top: 2px;
+  right:2px;
+  content: '@';
+  font-weight: bold;
+  font-size: 18px;
+}
