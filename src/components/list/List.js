@@ -7,9 +7,9 @@ function List(props) {
 
   return (
     <ul className={'list'}>
-      {items.map((item, index) => (
+      {items.map((item) => (
         <ListItem
-          key={index}
+          key={item.id}
           text={item.text}
           subText={item.subText}
         />)
