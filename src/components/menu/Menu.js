@@ -4,6 +4,9 @@ import './Menu.css';
 function Menu() {
   return (
     <div className={'menu'}>
+    <div className={'search'}>
+      <input placeholder={'Zoeken naar meetups..'} />
+    </div>
       <ul className={'list'}>
         <li className={'list-item'}>
           <button className={'wrapper'}>
