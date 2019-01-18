@@ -1,13 +1,12 @@
 import React from 'react';
 import List from '../list/List';
+import Search from '../search/Search';
 import './Menu.css';
 
 function Menu() {
   return (
     <div className={'menu'}>
-      <div className={'search'}>
-        <input placeholder={'Zoeken naar meetups..'} />
-      </div>
+      <Search />
       <List />
     </div>
   );
