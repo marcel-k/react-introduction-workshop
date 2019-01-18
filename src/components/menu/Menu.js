@@ -40,45 +40,35 @@ const menuItems = [
   }
 ];
 
-function Menu() {
-  /**
-   * Could do something like this, 
-   * but then you would have to edit the list / listitem component
-   * every time you have a different use case for it.
-  const cssClasses = {
-    selected: 'list-item-selected',
-    registered: 'list-item-registered'
-  };
-  const selectedItemId = 1;
-  <List
-    items={menuItems}
-    cssClasses={cssClasses}
-    selectedItemId={selectedItemId}
-  />
+class Menu extends React.Component {
 
-  In stead, use composition and iterate over the menuItems here
-  */
+  constructor() {
+    super();
 
-  return (
-    <div className={'menu'}>
-      <Search />
-      <List>
-        {menuItems.map((item) => (
-          <ListItem
-            key={item.id}
-            text={item.text}
-            subText={item.subText}
-            // cssClasses={`${item.current ? 'current' : ''} ${item.registered ? 'registered' : ''}`}
-            cssClasses={classNames({
-              'current': item.current,
-              'registered': item.registered,
-              'selected': item.selected
-            })}
-          />)
-        )}
-      </List>
-    </div>
-  );
+    this.state = { searchText: '' };
+  }
+
+  render() {
+    return (
+      <div className={'menu'}>
+        <Search searchText={this.state.searchText} />
+        <List>
+          {menuItems.map((item) => (
+            <ListItem
+              key={item.id}
+              text={item.text}
+              subText={item.subText}
+              cssClasses={classNames({
+                'current': item.current,
+                'registered': item.registered,
+                'selected': item.selected
+              })}
+            />)
+          )}
+        </List>
+      </div>
+    );
+  }
 }
 
 export default Menu;
