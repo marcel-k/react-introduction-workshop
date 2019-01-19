@@ -65,6 +65,12 @@ class MenuContentContainer extends React.Component {
     };
   }
 
+  handleMenuItemClick(itemId) {
+    this.setState({
+      selectedItemId: itemId
+    });
+  }
+
   render() {
     const selectedItem = menuItems.find((item) => item.id === this.state.selectedItemId);
 
@@ -73,6 +79,7 @@ class MenuContentContainer extends React.Component {
         <Menu
           menuItems={menuItems}
           selectedItemId={this.state.selectedItemId}
+          onMenuItemClick={(id) => this.handleMenuItemClick(id)}
         />
         <Content
           title={selectedItem.title}

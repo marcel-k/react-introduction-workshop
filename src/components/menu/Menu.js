@@ -36,7 +36,7 @@ class Menu extends React.Component {
   }
 
   render() {
-    const { selectedItemId } = this.props;
+    const { selectedItemId, onMenuItemClick } = this.props;
     const filteredItems = this.filterMenuItems();
 
     return (
@@ -50,6 +50,7 @@ class Menu extends React.Component {
               key={item.id}
               text={item.title}
               subText={item.date}
+              onClick={() => onMenuItemClick(item.id)}
               cssClasses={classNames({
                 'current': item.current,
                 'registered': item.registered,
