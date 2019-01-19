@@ -1,0 +1,58 @@
+{
+  "meetups": [
+    {
+      "id": 1,
+      "title": "React Deep Dive I",
+      "date": "22 feb 2019"
+    },
+    {
+      "id": 2,
+      "title": "Angular Deep Dive I",
+      "date": "8 feb 2019"
+    },
+    {
+      "id": 3,
+      "title": "React Introduction",
+      "date": "25 jan 2019",
+      "current": true,
+      "registered": true
+    },
+    {
+      "id": 4,
+      "title": "Angular Introduction",
+      "date": "11 jan 2019",
+      "registered": true
+    },
+    {
+      "id": 5,
+      "title": "Fresh up your CSS Skills",
+      "date": "30 november 2018"
+    },
+    {
+      "id": 6,
+      "title": "HTML semantics and accesibility",
+      "date": "2 november 2018"
+    },
+    {
+      "id": 7,
+      "title": "JavaScript and TypeScript Fundamentals",
+      "date": "19 october 2018"
+    },
+    {
+      "id": 8,
+      "title": "Human Centered Design",
+      "date": "21 september 2018"
+    }
+  ],
+  "content": [
+    {
+      "id": 1,
+      "paragraphs": [
+        "The first Fresh Friday EVER will offer you a head start on a creative approach to problem solving that should be the backbone of every (digital) product. Human-centered design (HCD) is all about making better products and fosters deep empathy with the humans that will engage with them. Therefore, it is a crucial mindset for every member in your product team: from business to backend development. We will touch upon the following subjects: what is it, why use it, who is it for, when to use it, methods, means and mindset and how to implement it. Enough to talk about!",
+        "Frontend developers with at least two years of experience in frontend development in a team or in a professional organization, interested in creating products that are both meaningful and valuable to humans. This meetup is also intented for Clockwork frontend developers so the number of vacant spots is limited!",
+        "Gain an understanding of Human Centered Design principles and learn how to apply the HCD mindset and methods in your next project.",
+        "It is completely free, including drinks & snacks!"
+      ]
+    }
+  ]
+}

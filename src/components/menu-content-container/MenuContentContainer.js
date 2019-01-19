@@ -56,16 +56,15 @@ const paragraphs = [
   `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
 ];
 
+const apiUrl = 'http://localhost:5005/api';
+
 class MenuContentContainer extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       selectedItemId: 1,
-      // right way
       items: menuItems // should do this in componentDidMount
-      // @wrong way 2
-      // selectedItem: menuItems[0]
     };
   }
 
@@ -81,23 +80,6 @@ class MenuContentContainer extends React.Component {
    * Meanwhile, selectedItem could already have been changed.
    */
   handleRegisterClick(itemId, isRegistered) {
-    // Start a long save here
-    // @wrong way 1
-    // const selectedItem = menuItems.find((item) => item.id === this.state.selectedItemId);
-    // selectedItem.registered = !selectedItem.registered;
-    // this.forceUpdate();
-    // @wrong way 2a
-    // const { selectedItem } = this.state;
-    // selectedItem.registered = !selectedItem.registered; // don't edit directly!
-    // this.setState({ selectedItem });
-    // @wrong way 2b
-    // this.setState({ // create a new object on state, better but won't work.
-    //   selectedItem: {
-    //     ...this.state.selectedItem,
-    //     registered: !selectedItem.registered
-    //   }
-    // });
-    // @right way: immutability, do not directly edit the original menuItems or state objects.
     const { items } = this.state;
     const index = items.findIndex(({ id }) => id === itemId);
     const item = items[index];
@@ -110,8 +92,6 @@ class MenuContentContainer extends React.Component {
   }
 
   render() {
-    // @wrong way 2
-    // const {selectedItem} = this.state;
     const selectedItem = this.state.items.find((item) => item.id === this.state.selectedItemId);
 
     return (
@@ -120,8 +100,6 @@ class MenuContentContainer extends React.Component {
           menuItems={this.state.items}
           selectedItemId={this.state.selectedItemId}
           onMenuItemClick={(id) => this.handleMenuItemClick(id)}
-          // @wrong way 2
-          // selectedItemId={selectedItem.id}
         />
         <Content
           id={selectedItem.id}
@@ -129,8 +107,6 @@ class MenuContentContainer extends React.Component {
           paragraphs={paragraphs}
           registered={selectedItem.registered}
           onRegisterClick={(id, isRegistered) => this.handleRegisterClick(id, isRegistered)}
-          // @wrong way 2
-          // onRegisterClick={() => this.handleRegisterClick()}
         />
       </>
     );
