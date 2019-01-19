@@ -29,13 +29,21 @@ class Menu extends React.Component {
     return filteredItems;
   }
 
+  handleInputChange(text) {
+    this.setState({
+      searchText: text
+    });
+  }
+
   render() {
     const { selectedItemId } = this.props;
     const filteredItems = this.filterMenuItems();
 
     return (
       <div className={'menu'}>
-        <Search searchText={this.state.searchText} />
+        <Search 
+        searchText={this.state.searchText}
+        onInputChange={(value) => this.handleInputChange(value)} />
         <List>
           {filteredItems.map((item) => (
             <ListItem
