@@ -59,8 +59,8 @@ const paragraphs = [
 ];
 
 class MenuContentContainer extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = { 
       selectedItemId: 1
