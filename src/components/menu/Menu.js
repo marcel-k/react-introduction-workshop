@@ -30,6 +30,7 @@ class Menu extends React.Component {
   }
 
   render() {
+    const { selectedItemId } = this.props;
     const filteredItems = this.filterMenuItems();
 
     return (
@@ -44,7 +45,7 @@ class Menu extends React.Component {
               cssClasses={classNames({
                 'current': item.current,
                 'registered': item.registered,
-                'selected': item.selected
+                'selected': item.id === selectedItemId
               })}
             />)
           )}

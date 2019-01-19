@@ -62,7 +62,7 @@ class MenuContentContainer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { 
+    this.state = {
       selectedItemId: 1
     };
   }
@@ -72,7 +72,10 @@ class MenuContentContainer extends React.Component {
 
     return (
       <>
-        <Menu menuItems={menuItems} />
+        <Menu
+          menuItems={menuItems}
+          selectedItemId={this.state.selectedItemId}
+        />
         <Content
           title={title}
           paragraphs={paragraphs}
