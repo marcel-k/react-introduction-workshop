@@ -66,7 +66,7 @@ class Menu extends React.Component {
   filterMenuItems() {
     const filteredItems =
       menuItems.filter((item) => {
-        const itemText = item.text.toLowerCase();
+        const itemText = item.title.toLowerCase();
         const searchText = this.state.searchText.toLowerCase();
 
         if (itemText.indexOf(searchText) !== -1) {
