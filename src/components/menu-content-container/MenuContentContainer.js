@@ -103,7 +103,7 @@ class MenuContentContainer extends React.Component {
     const item = items[index];
     const newItem = { ...item, registered: !isRegistered };
     const newItems = [...items];
-    newItems[0] = newItem;
+    newItems[index] = newItem;
     this.setState({
       items: newItems
     });
