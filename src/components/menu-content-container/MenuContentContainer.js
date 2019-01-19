@@ -2,11 +2,6 @@ import React from 'react';
 import Menu from '../menu/Menu';
 import Content from '../content/Content';
 
-const paragraphs = [
-  `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-  `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
-];
-
 const apiUrl = 'http://localhost:5005/api';
 
 class MenuContentContainer extends React.Component {
@@ -15,13 +10,25 @@ class MenuContentContainer extends React.Component {
 
     this.state = {
       selectedItemId: 0,
-      items: []
+      items: [],
+      paragraphs: []
     };
   }
 
   handleMenuItemClick(itemId) {
     this.setState({
       selectedItemId: itemId
+    });
+
+    this.updateContent(itemId);
+  }
+
+  async updateContent(itemId) {
+    const response = await fetch(apiUrl + '/content/' + itemId);
+    const content = await response.json();
+
+    this.setState({
+      paragraphs: content.paragraphs
     });
   }
 
@@ -46,10 +53,13 @@ class MenuContentContainer extends React.Component {
     const response = await fetch(apiUrl + '/meetups');
     const menuItems = await response.json();
 
+    const selectedItemId = menuItems[0].id;
     this.setState({
-      selectedItemId: menuItems[0].id,
+      selectedItemId: selectedItemId,
       items: menuItems
     });
+
+    this.updateContent(selectedItemId);
   }
 
   render() {
@@ -66,7 +76,7 @@ class MenuContentContainer extends React.Component {
         <Content
           id={selectedItem.id}
           title={selectedItem.title}
-          paragraphs={paragraphs}
+          paragraphs={this.state.paragraphs}
           registered={selectedItem.registered}
           onRegisterClick={(id, isRegistered) => this.handleRegisterClick(id, isRegistered)}
         />
