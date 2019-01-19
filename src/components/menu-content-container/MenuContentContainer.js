@@ -61,23 +61,70 @@ class MenuContentContainer extends React.Component {
     super(props);
 
     this.state = {
-      selectedItemId: 1
+      selectedItemId: 1,
+      // right way
+      items: menuItems // should do this in componentDidMount
+      // @wrong way 2
+      // selectedItem: menuItems[0]
     };
   }
 
+  /**
+   * This method should save to the back-end
+   * and asynchronously wait for 200 OK before updating item.
+   * Meanwhile, selectedItem could already have been changed.
+   */
+  handleRegisterClick(itemId, isRegistered) {
+    // Start a long save here
+    // @wrong way 1
+    // const selectedItem = menuItems.find((item) => item.id === this.state.selectedItemId);
+    // selectedItem.registered = !selectedItem.registered;
+    // this.forceUpdate();
+    // @wrong way 2a
+    // const { selectedItem } = this.state;
+    // selectedItem.registered = !selectedItem.registered; // don't edit directly!
+    // this.setState({ selectedItem });
+    // @wrong way 2b
+    // this.setState({ // create a new object on state, better but won't work.
+    //   selectedItem: {
+    //     ...this.state.selectedItem,
+    //     registered: !selectedItem.registered
+    //   }
+    // });
+    // @right way: immutability, do not directly edit the original menuItems or state objects.
+    const { items } = this.state;
+    const index = items.findIndex(({ id }) => id === itemId);
+    const item = items[index];
+    const newItem = { ...item, registered: !isRegistered };
+    const newItems = [...items];
+    newItems[0] = newItem;
+    this.setState({
+      items: newItems
+    });
+  }
+
   render() {
-    const selectedItem = menuItems.find((item) => item.id === this.state.selectedItemId);
+    // @wrong way 2
+    // const {selectedItem} = this.state;
+    debugger;
+    const selectedItem = this.state.items.find((item) => item.id === this.state.selectedItemId);
 
     return (
       <>
         <Menu
-          menuItems={menuItems}
+          menuItems={this.state.items}
           selectedItemId={this.state.selectedItemId}
+          // @wrong way 2
+          // selectedItemId={selectedItem.id}
         />
         <Content
+          id={selectedItem.id}
           title={selectedItem.title}
           paragraphs={paragraphs}
           registered={selectedItem.registered}
+          onRegisterClick={(id, isRegistered) => this.handleRegisterClick(id, isRegistered)}
+          // @wrong way 2
+          // onRegisterClick={() => this.handleRegisterClick()}
         />
       </>
     );

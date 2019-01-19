@@ -4,9 +4,11 @@ import './Content.css';
 
 function Content(props) {
   const { 
+    id,
     title, 
     registered,
-    paragraphs = []
+    paragraphs = [],
+    onRegisterClick
    } = props;
 
   const buttonText = registered ? 'Unregister' : 'Register';
@@ -17,7 +19,7 @@ function Content(props) {
       {
         paragraphs.map((p, index) => <p key={`${title}-${index}`} className={'description'}>{p}</p>)
       }
-      <Button text={buttonText} />
+      <Button text={buttonText} onClick={() => onRegisterClick(id, registered)} />
     </main>
   );
 }

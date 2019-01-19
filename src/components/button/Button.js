@@ -2,9 +2,9 @@ import React from 'react';
 import './Button.css';
 
 function Button(props) {
-  const { text = '' } = props;
+  const { text = '', onClick } = props;
   return (
-    <button className={'button button-register'}>
+    <button className={'button button-register'} onClick={onClick}>
       {text}
     </button>
   );
