@@ -2,53 +2,53 @@ import React from 'react';
 import Menu from '../menu/Menu';
 import Content from '../content/Content';
 
-/**
- * This is data coming from the back-end.
+/** 
+ * Data from the back-end
  */
 const menuItems = [
   {
     id: 1,
-    text: 'React Deep Dive I',
-    subText: '22 feb 2019',
+    title: 'React Deep Dive I',
+    date: '22 feb 2019',
     selected: true // is not something that the back-end should know..
   },
   {
     id: 2,
-    text: 'Angular Deep Dive I',
-    subText: '8 feb 2019'
+    title: 'Angular Deep Dive I',
+    date: '8 feb 2019'
   },
   {
     id: 3,
-    text: 'React Introduction',
-    subText: '25 jan 2019',
+    title: 'React Introduction',
+    date: '25 jan 2019',
     current: true,
     registered: true
   },
   {
     id: 4,
-    text: 'Angular Introduction',
-    subText: '11 jan 2019',
+    title: 'Angular Introduction',
+    date: '11 jan 2019',
     registered: true
   },
   {
     id: 5,
-    text: 'Fresh up your CSS Skills',
-    subText: '30 november 2018'
+    title: 'Fresh up your CSS Skills',
+    date: '30 november 2018'
   },
   {
     id: 6,
-    text: 'HTML semantics and accesibility',
-    subText: '2 november 2018'
+    title: 'HTML semantics and accesibility',
+    date: '2 november 2018'
   },
   {
     id: 7,
-    text: 'JavaScript and TypeScript Fundamentals',
-    subText: '19 october 2018'
+    title: 'JavaScript and TypeScript Fundamentals',
+    date: '19 october 2018'
   },
   {
     id: 8,
-    text: 'Human Centered Design',
-    subText: '21 september 2018'
+    title: 'Human Centered Design',
+    date: '21 september 2018'
   }
 ];
 
