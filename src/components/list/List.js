@@ -22,8 +22,20 @@ function List() {
           subText={'11 jan 2019'}
         />
         <ListItem
-          text={'CSS Grid & Flexbox'}
-          subText={'11 jan 2019'}
+          text={'Fresh up your CSS Skills'}
+          subText={'30 november 2018'}
+        />
+        <ListItem
+          text={'HTML semantics and accesibility'}
+          subText={'2 november 2018'}
+        />
+        <ListItem
+          text={'JavaScript and TypeScript Fundamentals'}
+          subText={'19 october 2018'}
+        />
+        <ListItem
+          text={'Human Centered Design'}
+          subText={'21 september 2018'}
         />
     </ul>
   );
