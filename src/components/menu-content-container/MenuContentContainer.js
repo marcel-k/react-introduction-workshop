@@ -106,7 +106,6 @@ class MenuContentContainer extends React.Component {
   render() {
     // @wrong way 2
     // const {selectedItem} = this.state;
-    debugger;
     const selectedItem = this.state.items.find((item) => item.id === this.state.selectedItemId);
 
     return (
