@@ -56,23 +56,6 @@ const menuItems = [
 ];
 
 function Menu() {
-  /**
-   * Could do something like this, 
-   * but then you would have to edit the list / listitem component
-   * every time you have a different use case for it.
-  const cssClasses = {
-    selected: 'list-item-selected',
-    registered: 'list-item-registered'
-  };
-  const selectedItemId = 1;
-  <List
-    items={menuItems}
-    cssClasses={cssClasses}
-    selectedItemId={selectedItemId}
-  />
-
-  In stead, use composition and iterate over the menuItems here
-  */
 
   return (
     <div className={'menu'}>
@@ -83,7 +66,6 @@ function Menu() {
             key={item.id}
             text={item.title}
             subText={item.date}
-            // cssClasses={`${item.current ? 'current' : ''} ${item.registered ? 'registered' : ''}`}
             cssClasses={classNames({
               'current': item.current,
               'registered': item.registered,
