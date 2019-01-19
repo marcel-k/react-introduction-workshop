@@ -23,6 +23,9 @@ class MenuContentContainer extends React.Component {
     this.setState({
       selectedItemId: itemId
     });
+
+    // const response = await fetch(apiUrl + '/content/' + itemId);
+    // const content = await response.json();
   }
 
   /**
