@@ -10,8 +10,8 @@ function List(props) {
       {items.map((item) => (
         <ListItem
           key={item.id}
-          text={item.text}
-          subText={item.subText}
+          text={item.title}
+          subText={item.date}
         />)
       )}
     </ul>
