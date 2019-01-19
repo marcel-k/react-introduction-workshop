@@ -53,6 +53,66 @@
         "Gain an understanding of Human Centered Design principles and learn how to apply the HCD mindset and methods in your next project.",
         "It is completely free, including drinks & snacks!"
       ]
+    },
+    {
+      "id": 2,
+      "paragraphs": [
+        "Are you a designer or a HTML-er/CSS-er? do you have some experience with JavaScript and are aspiring to become a full fledged front-end developer? Maybe you want to learn Angular or React but don't know where to start, or maybe you just want to freshen up your knowledge of JavaScript and TypeScript. If this is you then we invite you to our Fresh Friday @ ClockWork Amsterdam.",
+        "ECMAScript, the standard specification for JavaScript and other scripting languages, has added a lot of features since version 5 that are now supported by most browsers. Newer features are heavily used in modern JavaScript frameworks / libraries and are often combined with TypeScript for type-checking. In this introduction, we will get our hands on the most important features since ES6 and use them with TypeScript.",
+        "All (aspiring) front-end developers. Basic knowledge of JavaScript is handy but not a requirement.",
+        "After this training you will have used the latest features of ECMAScript and combined them with TypeScript, and will be able to recognise these features in any codebase."
+      ]
+    },
+    {
+      "id": 3,
+      "paragraphs": [
+        "Within the front-end community, the focus mainly lies on JS frameworks. However, with the increasing amount of different devices as well as expectations of usability and accessibility, the need for the correct use of HTML and semantics are more important than ever.",
+        "During this day we will: - Focus on why semantics and accessibility matters. - Learn to create semantic correct page layouts. - Dive into the latest HTML 5.2 spec. - Discover some very useful but rarely used HTML elements. - Find a practical approach to develop a good foundation for accessible -applications. - Explore to use aria to fill the gaps. - Gain tips, tricks and tooling so you can validate and audit your own code.",
+        "Frontend developers with at least two years of experience in frontend development in a team or professional organization. Knowledge of HTML is recommended but not required.",
+        "This meetup is also open for frontend developers within Clockwork so the number of vacant spots is limited!",
+        "After this meetup you will understand the importance of HTML semantics and accessibility, and know how to implement this in your workflow."
+      ]
+    },
+    {
+      "id": 4,
+      "paragraphs": [
+        "Are you not that familiar with things as CSS grid, CSS variables, Flexbox and CSS animation? Time to fresh up your skills. We are going to spend a day to fresh up our CSS skills and get in depth with these techniques.",
+        "During this day we will: - Get a lot of quick tips to catch the weird parts of CSS and learn some new parts. - Learn to create responsive page layouts with CSS grid - Learn to create responsive components - Get to know the ins and outs of CSS variables - Have some fun with CSS animation",
+        "All Frontend developers with at least a years of experience in frontend development in a team or professional organization.",
+        "This meetup is also open for frontend developers within Clockwork so the number of vacant spots is limited!",
+        "You will have learned some quick CSS wins and are able to create responsive grid’s and layouts, you know how to animate elements with CSS and know how and when to use CSS variables."
+      ]
+    },
+    {
+      "id": 5,
+      "paragraphs": [
+        "Are you a Frontend Developer and always wanted to learn Angular? Are your familiar with AngularJS but not so much with Angular2 and above? Do you have experience with other frameworks/libraries like React & Vue and you are also interested in Angular? Maybe you just want to learn Angular but you don't know where to start, or maybe you just want to freshen up your knowledge of Angular. If this is you then we invite you to our Fresh Friday @ ClockWork Amsterdam.",
+        "Angular has come a long way since its birth in 2010, it was very popular and very much used. It was perfect for small applications but not so great (performance wise) for large-scale applications. So in 2016 a brand new rewritten Angular version emerged. We now refer to this new version as simply Angular or 'Angular 2 and above'. The old version is now being referred as AngularJS.",
+        "This introduction day will consist of short Angular presentations/demonstrations and many various exercises",
+        "All (aspiring) Angular front-end developers. Basic knowledge of JavaScript and Typescript is very handy but not a requirement.",
+        "After this training you will know the basics of Angular and you have used the latest Angular version to build a small Single Page Application all by yourself!"
+      ]
+    },
+    {
+      "id": 6,
+      "paragraphs": [
+        "Are you a Frontend Developer and always wanted to learn React? Do you have experience with other frameworks/libraries like Angular & Vue and you are also interested in React? Maybe you just want to learn React but you don't know where to start, or maybe you just want to freshen up your knowledge of React. If this is you then we invite you to our Fresh Friday @ ClockWork Amsterdam.",
+        "React is a declarative, efficient, and flexible JavaScript library for building user interfaces. During this training we will take a look into React fundamentals. With the create-react-app CLI we will build a small application to get a basic understanding of React and its concepts. This introduction day will begin with React presentations/demonstrations and continue with various exercises concerning React fundamentals.",
+        "All (aspiring) React front-end developers. Some knowledge of JavaScript, HTML and CSS is required to attend this meetup.",
+        "After this training you will know the basics of React and you will have used the latest React version to build a small Single Page Application all by yourself!"
+      ]
+    },
+    {
+      "id": 7,
+      "paragraphs": [
+        "Angular Deep Dive I content to be announced!"
+      ]
+    },
+    {
+      "id": 8,
+      "paragraphs": [
+        "React Deep Dive I content to be announced!"
+      ]
     }
   ]
 }
