@@ -69,6 +69,12 @@ class MenuContentContainer extends React.Component {
     };
   }
 
+  handleMenuItemClick(itemId) {
+    this.setState({
+      selectedItemId: itemId
+    });
+  }
+
   /**
    * This method should save to the back-end
    * and asynchronously wait for 200 OK before updating item.
@@ -113,6 +119,7 @@ class MenuContentContainer extends React.Component {
         <Menu
           menuItems={this.state.items}
           selectedItemId={this.state.selectedItemId}
+          onMenuItemClick={(id) => this.handleMenuItemClick(id)}
           // @wrong way 2
           // selectedItemId={selectedItem.id}
         />
