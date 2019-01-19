@@ -16,7 +16,7 @@ class Menu extends React.Component {
   filterMenuItems() {
     const filteredItems =
       this.props.menuItems.filter((item) => {
-        const itemText = item.text.toLowerCase();
+        const itemText = item.title.toLowerCase();
         const searchText = this.state.searchText.toLowerCase();
 
         if (itemText.indexOf(searchText) !== -1) {
@@ -39,8 +39,8 @@ class Menu extends React.Component {
           {filteredItems.map((item) => (
             <ListItem
               key={item.id}
-              text={item.text}
-              subText={item.subText}
+              text={item.title}
+              subText={item.date}
               cssClasses={classNames({
                 'current': item.current,
                 'registered': item.registered,
