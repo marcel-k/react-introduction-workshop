@@ -1,6 +1,6 @@
 {
-  "name": "1-layout",
-  "version": "0.1.0",
+  "name": "hands-on-react-intro",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "react": "^16.7.0",
