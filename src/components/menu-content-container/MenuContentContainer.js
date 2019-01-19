@@ -9,8 +9,7 @@ const menuItems = [
   {
     id: 1,
     text: 'React Deep Dive I',
-    subText: '22 feb 2019',
-    selected: true // is not something that the back-end should know..
+    subText: '22 feb 2019'
   },
   {
     id: 2,
@@ -60,9 +59,16 @@ const paragraphs = [
 ];
 
 class MenuContentContainer extends React.Component {
+  constructor() {
+    super();
+
+    this.state = { 
+      selectedItemId: 1
+    };
+  }
 
   render() {
-    const selectedItem = menuItems.find((item) => item.selected);
+    const selectedItem = menuItems.find((item) => item.id === this.state.selectedItemId);
 
     return (
       <>
