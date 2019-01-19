@@ -1,45 +1,45 @@
 {
   "meetups": [
     {
-      "id": 1,
+      "id": 8,
       "title": "React Deep Dive I",
       "date": "22 feb 2019"
     },
     {
-      "id": 2,
+      "id": 7,
       "title": "Angular Deep Dive I",
       "date": "8 feb 2019"
     },
     {
-      "id": 3,
+      "id": 6,
       "title": "React Introduction",
       "date": "25 jan 2019",
       "current": true,
       "registered": true
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Angular Introduction",
       "date": "11 jan 2019",
       "registered": true
     },
     {
-      "id": 5,
+      "id": 4,
       "title": "Fresh up your CSS Skills",
       "date": "30 november 2018"
     },
     {
-      "id": 6,
+      "id": 3,
       "title": "HTML semantics and accesibility",
       "date": "2 november 2018"
     },
     {
-      "id": 7,
+      "id": 2,
       "title": "JavaScript and TypeScript Fundamentals",
       "date": "19 october 2018"
     },
     {
-      "id": 8,
+      "id": 1,
       "title": "Human Centered Design",
       "date": "21 september 2018"
     }
