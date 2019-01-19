@@ -91,6 +91,12 @@ class MenuContentContainer extends React.Component {
     });
   }
 
+  async componentDidMount() {
+    // const response = await fetch(apiUrl + '/meetups');
+    // const menuItems = await response.json();
+
+  }
+
   render() {
     const selectedItem = this.state.items.find((item) => item.id === this.state.selectedItemId);
 
