@@ -32,6 +32,17 @@ class MenuContentContainer extends React.Component {
     });
   }
 
+  async updateMeetup(meetup) {
+    const response = await fetch(apiUrl + '/meetups/' + meetup.id, {
+      method: 'PUT',
+      body: JSON.stringify(meetup),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const updatedMeetup = await response.json();
+  }
+
   /**
    * This method should save to the back-end
    * and asynchronously wait for 200 OK before updating item.
@@ -64,7 +75,7 @@ class MenuContentContainer extends React.Component {
 
   render() {
     let selectedItem = this.state.items.find((item) => item.id === this.state.selectedItemId);
-    selectedItem = selectedItem || { };
+    selectedItem = selectedItem || {};
 
     return (
       <>
