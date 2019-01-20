@@ -41,6 +41,15 @@ class MenuContentContainer extends React.Component {
       }
     });
     const updatedMeetup = await response.json();
+
+    const { items } = this.state;
+    const index = items.findIndex(({ id }) => id === meetup.id);
+    const newItems = [...items];
+    newItems[index] = updatedMeetup;
+
+    this.setState({
+      items: newItems
+    });
   }
 
   /**
@@ -50,14 +59,10 @@ class MenuContentContainer extends React.Component {
    */
   handleRegisterClick(itemId, isRegistered) {
     const { items } = this.state;
-    const index = items.findIndex(({ id }) => id === itemId);
-    const item = items[index];
+    const item = items.find(({ id }) => id === itemId);
     const newItem = { ...item, registered: !isRegistered };
-    const newItems = [...items];
-    newItems[index] = newItem;
-    this.setState({
-      items: newItems
-    });
+
+    this.updateMeetup(newItem);
   }
 
   async componentDidMount() {
