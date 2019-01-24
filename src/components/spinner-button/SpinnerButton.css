@@ -1,0 +1,7 @@
+.spinner-button {
+  display: flex;
+}
+
+.spinner-button .spinner-wrapper {
+  padding-right: 8px;
+}

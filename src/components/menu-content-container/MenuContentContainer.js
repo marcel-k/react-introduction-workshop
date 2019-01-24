@@ -14,7 +14,8 @@ class MenuContentContainer extends React.Component {
       items: [],
       paragraphs: [],
       isLoadingMenu: true,
-      isLoadingContent: true
+      isLoadingContent: true,
+      isUpdatingMeetup: false
     };
   }
 
@@ -41,6 +42,10 @@ class MenuContentContainer extends React.Component {
   }
 
   async updateMeetup(meetup) {
+    this.setState({
+      isUpdatingMeetup: true
+    });
+
     const response = await fetch(apiUrl + '/meetups/' + meetup.id, {
       method: 'PUT',
       body: JSON.stringify(meetup),
@@ -56,7 +61,8 @@ class MenuContentContainer extends React.Component {
     newItems[index] = updatedMeetup;
 
     this.setState({
-      items: newItems
+      items: newItems,
+      isUpdatingMeetup: false
     });
   }
 
@@ -118,6 +124,7 @@ class MenuContentContainer extends React.Component {
             title={selectedItem.title}
             paragraphs={this.state.paragraphs}
             registered={selectedItem.registered}
+            showRegisterSpinner={this.state.isUpdatingMeetup}
             onRegisterClick={(id, isRegistered) => this.handleRegisterClick(id, isRegistered)}
           />
         }

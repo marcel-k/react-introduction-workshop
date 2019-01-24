@@ -1,15 +1,16 @@
 import React from 'react';
-import Button from '../button/Button';
+import SpinnerButton from '../spinner-button/SpinnerButton';
 import './Content.css';
 
 function Content(props) {
-  const { 
+  const {
     id,
-    title, 
+    title,
     registered,
     paragraphs = [],
-    onRegisterClick
-   } = props;
+    onRegisterClick,
+    showRegisterSpinner
+  } = props;
 
   const buttonText = registered ? 'Unregister' : 'Register';
 
@@ -19,9 +20,16 @@ function Content(props) {
       {
         paragraphs.map((p, index) => <p key={`${title}-${index}`} className={'description'}>{p}</p>)
       }
-      <Button text={buttonText} onClick={() => onRegisterClick(id, registered)} />
-    </main>
-  );
-}
 
+      <div className={'content-footer'}>
+        <SpinnerButton
+          text={buttonText}
+          showSpinner={showRegisterSpinner}
+          onClick={() => onRegisterClick(id, registered)}
+        />
+      </div>
+    </main>
+      );
+    }
+    
 export default Content;
