@@ -13,6 +13,8 @@ function Spinner(props) {
           style={{ fill: '#00000' }} />
       </g>
     </svg>
+    <div className={'spinner-wrapper'}>
+    </div>
   );
 }
 
