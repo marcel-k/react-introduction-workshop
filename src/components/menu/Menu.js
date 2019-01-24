@@ -55,35 +55,27 @@ const menuItems = [
   }
 ];
 
-class Menu extends React.Component {
+function Menu() {
 
-  constructor(props) {
-    super(props);
-
-    this.state = { searchText: '' };
-  }
-
-  render() {
-    return (
-      <div className={'menu'}>
-        <Search searchText={this.state.searchText} />
-        <List>
-          {menuItems.map((item) => (
-            <ListItem
-              key={item.id}
-              text={item.title}
-              subText={item.date}
-              cssClasses={classNames({
-                'current': item.current,
-                'registered': item.registered,
-                'selected': item.selected
-              })}
-            />)
-          )}
-        </List>
-      </div>
-    );
-  }
+  return (
+    <div className={'menu'}>
+      <Search />
+      <List>
+        {menuItems.map((item) => (
+          <ListItem
+            key={item.id}
+            text={item.title}
+            subText={item.date}
+            cssClasses={classNames({
+              'current': item.current,
+              'registered': item.registered,
+              'selected': item.selected
+            })}
+          />)
+        )}
+      </List>
+    </div>
+  );
 }
 
 export default Menu;
