@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from '../menu/Menu';
 import Content from '../content/Content';
+import Spinner from '../spinner/Spinner';
 
 const apiUrl = 'http://localhost:5005/api';
 
@@ -11,7 +12,9 @@ class MenuContentContainer extends React.Component {
     this.state = {
       selectedItemId: 0,
       items: [],
-      paragraphs: []
+      paragraphs: [],
+      isLoadingMenu: true,
+      isLoadingContent: true
     };
   }
 
@@ -24,11 +27,16 @@ class MenuContentContainer extends React.Component {
   }
 
   async updateContent(itemId) {
+    this.setState({
+      isLoadingContent: true
+    });
+
     const response = await fetch(apiUrl + '/content/' + itemId);
     const content = await response.json();
 
     this.setState({
-      paragraphs: content.paragraphs
+      paragraphs: content.paragraphs,
+      isLoadingContent: false
     });
   }
 
@@ -66,13 +74,18 @@ class MenuContentContainer extends React.Component {
   }
 
   async componentDidMount() {
+    this.setState({
+      isLoadingMenu: true
+    });
+
     const response = await fetch(apiUrl + '/meetups');
     const menuItems = await response.json();
 
     const selectedItemId = menuItems[0].id;
     this.setState({
       selectedItemId: selectedItemId,
-      items: menuItems
+      items: menuItems,
+      isLoadingMenu: false
     });
 
     this.updateContent(selectedItemId);
@@ -84,18 +97,30 @@ class MenuContentContainer extends React.Component {
 
     return (
       <>
-        <Menu
-          menuItems={this.state.items}
-          selectedItemId={this.state.selectedItemId}
-          onMenuItemClick={(id) => this.handleMenuItemClick(id)}
-        />
-        <Content
-          id={selectedItem.id}
-          title={selectedItem.title}
-          paragraphs={this.state.paragraphs}
-          registered={selectedItem.registered}
-          onRegisterClick={(id, isRegistered) => this.handleRegisterClick(id, isRegistered)}
-        />
+        {this.state.isLoadingMenu && <Spinner color={'#61dafb'} cssClasses={'menu'} />}
+        {!this.state.isLoadingMenu &&
+          <Menu
+            menuItems={this.state.items}
+            selectedItemId={this.state.selectedItemId}
+            onMenuItemClick={(id) => this.handleMenuItemClick(id)}
+          />
+        }
+        {this.state.isLoadingContent &&
+          <Spinner
+            size={100}
+            color={'#ff4700'}
+            cssClasses={'content'} />
+        }
+        {!this.state.isLoadingContent &&
+          this.state.selectedItemId !== 0 &&
+          <Content
+            id={selectedItem.id}
+            title={selectedItem.title}
+            paragraphs={this.state.paragraphs}
+            registered={selectedItem.registered}
+            onRegisterClick={(id, isRegistered) => this.handleRegisterClick(id, isRegistered)}
+          />
+        }
       </>
     );
   }
