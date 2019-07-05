@@ -23,7 +23,6 @@ It is actually a bit strange for the search component to put the focus on the in
 In this branch a spinner component has been added. The spinner component is an inline svg!
 We want to use this spinner component in the MenuContentContainer to display a spinner while the menu and content are loading. Edit the spinner component so its color and size (height and width) can be set from the outside. Track if the menu and/or content are loading via two booleans on the state of MenuContentContainer and show or hide a spinner when the menu and/or content is loading.
 
-
 #### assignment 23: use branch --> 22b-conditional-rendering-spinner
 To finish the app and make it perfect, We also want to show a tiny spinner beside the register when the register button is clicked.
 To do this we want to make a new component 'SpinnerButton' that combines the button and spinner components. The spinners visibility should be editable from the outside via props.

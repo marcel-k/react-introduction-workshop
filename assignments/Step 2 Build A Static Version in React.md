@@ -1,7 +1,7 @@
 ## Step 2: Build A Static Version in React
 
 ### For the trainer
-Lees step 2 van thinking in react.
+Read step 2 'Thinking in React' together.
 
 #### assignment 5: use branch --> 04-stateless-button-list-input
 One component we haven’t made yet is the list item component. Every item of our list is also a component. So create a component called ListItem. You will need use props inside your listitem component to print the title or tekst that is on each item. The list will use this list-item component for every item and supply this title via it’s props. You can but don’t need to use a map function yet.

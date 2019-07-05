@@ -1,7 +1,7 @@
 ## Step 5: Add Inverse Data Flow
 
 ## For the trainer:
-Data flowed nu alleen naar beneden via de props. Wat we willen is dat de state ook wordt bijgewerkt wanneer er getypt wordt in het filter, geklikt wordt op register of selected meetup wanneer er geklikt wordt op een meetup.
+The data is only flowing top to bottom now via props. We also want the state of the parent components to be updated when a user types in the searchbox, when the user clicks on the register button or when a user clicks on a meetup in the list.
 
 #### assigment 15: use branch --> 14-container-selected-item
 When our search text changes, we need to communicate to our menu component that It should filter our list. You can do this by adding an event to the input an call a function that is supplied by the menu component via props, essentially delegating the event handling, so we create a custom event. Start by catching the changes on the input with on change and add a onInputChange property on the props of the search component. Then you have to make them work together.

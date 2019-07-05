@@ -1,7 +1,7 @@
 ## Step 1: Break The UI Into A Component Hierarchy
 
 ### For the trainer
-Lees step 1 van thinking in react, toon de omringende lijnen en leg uit dat we beginnen met het maken van wat componenten puur bestaande uit layout en styling. So we will get a little familiar with JSX.
+Read step one, show finished product with lines indicating the components. We will start with creating components for layout and styling, to get familair with React and JSX.
 
 #### assignment ~~1~~ and 2: use branch --> master
 We will start right away by creating a couple of functional components, the header and the footer. So for the header I basically want you to create a a folder named header, inside a file named Header.js and a css file named Header.css, move the header html from the app component to the Header.js and use the Header component in the App component. Same goes for the footer. Add a title and mabe a logo while your at it.
