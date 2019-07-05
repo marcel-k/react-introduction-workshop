@@ -70,7 +70,7 @@ renders: list and content. common owner: MenuContentContainer
 
 State: selected meetup
 renders: list and content. common owner: MenuContentContainer
-- 14: zet default selecteditemId (minimaal benodigd) op de state in constructor van menucontentcontainer en verwijder selected prop uit de menuitems. Zorg ook dat het menu gebruik gaat maken van selectedItemId via props.
+- 14: zet default selecteditemId (minimaal benodigd) op de state in constructor van menucontentcontainer en verwijder selected prop uit de menuitems. Zorg ook dat het menu gebruik gaat maken van selectedItemId via props. Dingen die je kunt 'berekenen' moet je niet op de state zetten. In essentie kun je berekenen welk item selected is door een filter over de lijst te halen. Als je de hele item op de state zet en je wil later de register property van deze item veranderen kun je in de problemen komen.
 
 State: Search text
 - 15: Begin met de search text.
