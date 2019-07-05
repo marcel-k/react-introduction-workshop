@@ -20,7 +20,7 @@ Our next piece of state we want to use is our selected item. And actually the re
 Now that we have done that, to keep track of the selecteditem and the register state of each item, we also need to move the menuItems data to the container component.
 
 #### assignment 13: use branch --> 12-container-menu-items
-Now that we have our common ancestor, we can keep track of the register button state. Find the selecteditem and pass its register property and its title to the content as props. When a menu item is registered, the button tekst should say ‘unregister’
+Now that we have our common ancestor, we can have communication between the menu and content components. Find the selecteditem and pass its register property and its title to the content as props. When a menu items 'registered' property is true, the button tekst should say ‘unregister’.
 
 #### assignment 14: use branch --> 13-container-registered-content
-Finally, we van keep track of our selectedItem. imagine our data coming from a back-end server. A server should not and will not which item is selected in our app. So we need to remove that prop. In stead, we will track our selected item on the state. Begin by setting the default selected item on the state inside our constructor. Make sure our menu component get passed the selecteditem as prop.
+Finally, we van keep track of our selectedItem. imagine our data coming from a back-end server. A server should not and will not know which item is selected in our app. So we need to remove that property from the hardcoded data array. Instead, we will track our selected item on the state. Begin by setting the default selected item on the state inside our constructor. Make sure our menu component get passed the selecteditem as prop.
