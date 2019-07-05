@@ -11,27 +11,8 @@ function menuContentReducer(state, action) {
     case 'FETCHING_MENU_ITEMS': {
       return { ...state, isLoadingMenu: true };
     }
-    case 'MENU_ITEMS_FETCHED': {
-      return { ...state, isLoadingMenu: false, selectedItemId: payload[0].id, items: payload };
-    }
     case 'SET_SELECTED_ITEM': {
       return { ...state, selectedItemId: payload };
-    }
-    case 'FETCHING_CONTENT': {
-      return { ...state, isLoadingContent: true };
-    }
-    case 'CONTENT_FETCHED': {
-      return { ...state, isLoadingContent: false, paragraphs: payload.paragraphs }
-    }
-    case 'UPDATING_MEETUP': {
-      return { ...state, isUpdatingMeetup: true };
-    }
-    case 'MEETUP_UPDATED': {
-      const { items } = state;
-      const index = items.findIndex((item) => item.id === payload.id);
-      items[index] = payload;
-
-      return { ...state, isUpdatingMeetup: false, items: [...items] };
     }
     default:
       return state;
@@ -41,40 +22,20 @@ function menuContentReducer(state, action) {
 function MenuContentContainer(_props) {
   // const {  } = props;
   const [state, dispatch] = useReducer(menuContentReducer, {
-    items: [],
-    paragraphs: [],
-    selectedItemId: 0,
-    isLoadingMenu: true,
-    isLoadingContent: true,
-    isUpdatingMeetup: false
+    // TODO: set initial/default state properties
   });
-  const {
-    items,
-    paragraphs,
-    selectedItemId,
-    isLoadingMenu,
-    isLoadingContent,
-    isUpdatingMeetup
-  } = state;
-  // const [selectedItemId, setSelectedItemId] = useState(0);
-  // const [items, setItems] = useState([]);
-  // const [paragraphs, setParagraphs] = useState([]);
-  // const [isLoadingMenu, setIsLoadingMenu] = useState(true);
-  // const [isLoadingContent, setIsLoadingContent] = useState(true);
-  // const [isUpdatingMeetup, setIsUpdatingMeetup] = useState(false);
+  // TODO: destructure state here so you can use all state properties directly
 
   useEffect(() => {
     async function getMenuItems() {
-      // setIsLoadingMenu(true);
-      dispatch({ type: 'FETCHING_MENU_ITEMS' });
+      // TODO: using the reducer: start the menu loading spinner
+      // dispatch({ type: 'FETCHING_MENU_ITEMS' });
 
       const response = await fetch(apiUrl + '/meetups');
       const menuItems = await response.json();
 
-      // setSelectedItemId(id);
-      // setItems(menuItems);
-      // setIsLoadingMenu(false);
-      dispatch({ type: 'MENU_ITEMS_FETCHED', payload: menuItems });
+      // TODO: Using the reducer: stop the menu loading spinner, update state with menuItems and update the selectedItemId
+      // dispatch(..);
 
       //Note: this could be done in a useEffect that is watching items
       updateContent(menuItems[0].id);
@@ -84,27 +45,26 @@ function MenuContentContainer(_props) {
   }, []);
 
   const handleMenuItemClick = (itemId) => {
-    // setSelectedItemId(itemId);
-    dispatch({ type: 'SET_SELECTED_ITEM', payload: itemId });
+    // TODO: using the reducer: update the selectedMenuId
+    // dispatch({ type: 'SET_SELECTED_ITEM', payload: itemId });
 
     //Note: this could be done in a useEffect that is watching selectedItemId
     updateContent(itemId);
   }
 
   const updateContent = async (itemId) => {
-    // setIsLoadingContent(true);
-    dispatch({ type: 'FETCHING_CONTENT' });
+    // TODO: Using the reducer: start the content loading spinner (isLoadingContent)
+    // dispatch(..);
 
     const response = await fetch(apiUrl + '/content/' + itemId);
     const content = await response.json();
 
-    // setParagraphs(content.paragraphs);
-    // setIsLoadingContent(false);
-    dispatch({ type: 'CONTENT_FETCHED', payload: content });
+    // TODO: using the reducer: stop the content loading spinner and update the paragraphs with content.paragraphs.
+    //dispatch(..);
   }
 
   const updateMeetup = async (meetup) => {
-    // setIsUpdatingMeetup(true);
+    // TODO: using the reducer: start the update meetup spinner (isUpdatingMeetup)
     dispatch({ type: 'UPDATING_MEETUP' });
 
     const response = await fetch(apiUrl + '/meetups/' + meetup.id, {
@@ -116,13 +76,11 @@ function MenuContentContainer(_props) {
     });
     const updatedMeetup = await response.json();
 
-    // const index = items.findIndex(({ id }) => id === meetup.id);
-    // const newItems = [...items];
-    // newItems[index] = updatedMeetup;
-
-    // setItems(newItems);
-    // setIsUpdatingMeetup(false);
-    dispatch({ type: 'MEETUP_UPDATED', payload: updatedMeetup });
+    // TODO: using the reducer: stop the update meetup spinner.
+    // update the meetup in the items list by finding the index
+    // and replacing the item in the list with updatedMeetup.
+    // Make sure the new items lists on the state is a NEW array.
+    //dispatch(..);
   }
 
   /**
