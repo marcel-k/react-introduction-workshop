@@ -2,3 +2,4 @@
   - [React top level API](https://reactjs.org/docs/react-api.html)
   - [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
   - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [Steps to convert class to functional component](https://medium.com/@olinations/10-steps-to-convert-a-react-class-component-to-a-functional-component-with-hooks-ab198e0fa139)
