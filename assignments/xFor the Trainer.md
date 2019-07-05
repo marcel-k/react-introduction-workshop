@@ -124,3 +124,12 @@ Open 22a en leg uit dat je een spinner component svg hebt toegevoegd.
     - Maak een spinnerbutton component die de button en spinner combineert. Toon de spinner via een prop.
     - Gebruik de spinnerbutton in de content ipv button.
     - Zorg dat de spinner wordt getoond wanneer de menucontentcontainer begint met updaten.
+
+- 24: gewoon doen. filterMenuItems kan een functie buiten de component worden.
+
+- 25: gewoon doen. even checken of inputRef.current bestaat in useEffect en mag maar 1 x uitvoeren, even laten zien wat er gebeurt als je geen tweede param meegeeft.
+
+- 26: is een stuk lastiger. van alle props op this.state een useState maken. alle setstates worden setHookName (meerdere).
+voor de reducer kun je alle setHookName gebruik bij langs en omzetten naar reducer:
+- Begin met FETCHING_MENU_ITEMS vanuit useEffect.
+  - zorg dat items ALTIJD een nieuwe array wordt.
