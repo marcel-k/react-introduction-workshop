@@ -1,0 +1,8 @@
+- [React docs](https://reactjs.org/docs/getting-started.html)
+  - [React top level API](https://reactjs.org/docs/react-api.html)
+  - [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
+  - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+  - [Hooks API reference](https://reactjs.org/docs/hooks-reference.html)
+- [Steps to convert class to functional component](https://medium.com/@olinations/10-steps-to-convert-a-react-class-component-to-a-functional-component-with-hooks-ab198e0fa139)
+- [what is a reducer in JS](https://www.robinwieruch.de/javascript-reducer/)
+- [useReducer vs useState](https://www.robinwieruch.de/react-usereducer-vs-usestate/)
