@@ -1,4 +1,4 @@
-## Step 4: Identify Where Your State Should Live
+## Step x: Refactoring to hooks
 
 ### For the trainer
 *Tip: For these assignments there are some useful links in the file 'Useful links.md' that may help ;)*
