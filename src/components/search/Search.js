@@ -1,30 +1,26 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import './Search.css';
 
-class Search extends React.Component {
-  constructor(props) {
-    super(props);
-    this.inputRef = React.createRef();
-  }
+function Search(props) {
+  const { searchText, onInputChange } = props;
+  const inputRef = useRef(null);
 
-  componentDidMount(){
-    this.inputRef.current.focus();
-  }
+  useEffect(() => {
+    if (!!inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
 
-  render() {
-    const { searchText, onInputChange } = this.props;
-
-    return (
-      <div className={'search'}>
-        <input
-        ref={this.inputRef}
-          placeholder={'Search for meetups..'}
-          defaultValue={searchText}
-          onChange={(e) => onInputChange(e.target.value)}
-        />
-      </div>
-    );
-  }
+  return (
+    <div className={'search'}>
+      <input
+        ref={inputRef}
+        defaultValue={searchText}
+        placeholder={'Search for meetups..'}
+        onChange={(e) => onInputChange(e.target.value)}
+      />
+    </div>
+  );
 }
 
 export default Search;
