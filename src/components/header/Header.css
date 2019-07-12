@@ -6,8 +6,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo {
   height: 50px;
+}
+
+nav {
+  position: absolute;
+  left: 12px;
+  bottom: 4px;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 4px;
+  color: white;
+  font-size: 16px;
+}
+
+nav ul li:hover  {
+  text-decoration: underline;
 }

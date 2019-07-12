@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import MenuContentContainer from './components/menu-content-container/MenuContentContainer';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './AppRoutes';
 import './App.css';
 
 class App extends Component {
@@ -9,9 +10,11 @@ class App extends Component {
   render() {
     return (
       <div className={'container'}>
-        <Header />
-        <MenuContentContainer />
-        <Footer />
+        <BrowserRouter>
+          <Header />
+          <AppRoutes />
+          <Footer />
+        </BrowserRouter>
       </div>
     );
   }
